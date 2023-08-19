@@ -22,6 +22,8 @@ Route::prefix('/admin/student')->middleware(['auth', 'admin'])->group(function (
     Route::get('/', [StudentController::class, 'index']);
     Route::get('/add', [StudentController::class, 'create']);
     Route::get('/view', [StudentController::class, 'view']);
+
+    
     Route::post('/status', [StudentController::class, 'student_status']);
     Route::get('/delete/{id}', [StudentController::class, 'destroy']);
     Route::get('/activate/{id}', [StudentController::class, 'activate']);
