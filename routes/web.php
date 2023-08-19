@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [StudentController::class, 'login']);
 
 Route::prefix('/admin/student')->middleware(['auth', 'admin'])->group(function () {
+
+
     Route::get('/', [StudentController::class, 'index']);
     Route::get('/add', [StudentController::class, 'create']);
     Route::get('/view', [StudentController::class, 'view']);
